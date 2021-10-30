@@ -14,7 +14,7 @@
 ![cover](cover.jpg?style=flat)
 
 <div align="center">
-  <video hidden src="https://user-images.githubusercontent.com/35613507/139519022-db8cb4a3-39e3-4b74-8788-d45fa9ec60de.mp4" type="video/mp4">
+  <video src="https://user-images.githubusercontent.com/35613507/139519022-db8cb4a3-39e3-4b74-8788-d45fa9ec60de.mp4" type="video/mp4">
   </video>
 </div>
 
