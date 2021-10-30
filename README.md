@@ -9,7 +9,7 @@
 </p>
 
 
-![cover](cover.png?style=flat)
+![cover](cover.jpg?style=flat)
 
 # MovieRepertor
 Find movies, add to your favorite list, watch-later and find movies by title.
