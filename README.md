@@ -4,12 +4,19 @@
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=E51C44&labelColor=0A1033">
+  
+  
 
 
 </p>
 
 
 ![cover](cover.jpg?style=flat)
+
+<div align="center">
+  <video src="https://user-images.githubusercontent.com/35613507/139519022-db8cb4a3-39e3-4b74-8788-d45fa9ec60de.mp4" type="video/mp4">
+  </video>
+</div>
 
 # MovieRepertor
 Find movies, add to your favorite list, watch-later and find movies by title.
