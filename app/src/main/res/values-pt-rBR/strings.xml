@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Movie Repertor</string>
+    <string name="title_home">Home</string>
+    <string name="title_watch_later">Assistir Depois</string>
+    <string name="title_watched">Assistido</string>
+    <string name="button_find_text">Encontrar</string>
+    <string name="network_error_occurred">Um erro de rede ocorreu</string>
+    <string name="no_results_found">Nenhum resultado encontrado</string>
+    <string name="search_title">Buscar</string>
+    <string name="search_hint">Encontrar filme pelo título</string>
+    <string name="no_results_text">Sem resultados</string>
+    <string name="popular_movies">Populares</string>
+    <string name="top_rated_movies">Bem Avaliados</string>
+    <string name="now_playing_movies">Assistindo agora</string>
+    <string name="share_body_text">Verificar quando sai o filme - </string>
+    <string name="share_via_text">Compartilhar via</string>
+    <string name="share_text">Compartilhar</string>
+    <string name="title_activity_movie">MovieActivity</string>
+    <string name="action_settings">Definições</string>
+    <string name="snack_bar_action_name">Desfazer</string>
+    <string name="deleted_favorite_snack_bar_text">O filme foi deletado da lista de favoritos!</string>
+    <string name="deleted_watch_snack_bar_text">O filme foi deletado da Watchlist!</string>
+</resources>

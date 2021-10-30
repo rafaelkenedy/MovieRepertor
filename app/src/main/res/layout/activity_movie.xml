@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="mainViewModel"
+            type="com.avs.moviefinder.ui.movie.MovieViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        tools:context=".ui.movie.MovieActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/collapsing_layout_height"
+            android:background="#FFFFFF"
+            android:fitsSystemWindows="true"
+            android:theme="@style/AppTheme">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/toolbar_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:theme="@style/AppTheme.NoActionBar"
+                app:collapsedTitleTextAppearance="@style/collapsingToolbarLayoutTitleColor"
+                app:contentScrim="@color/white"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:toolbarId="@+id/toolbar">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivPoster"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fitsSystemWindows="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_local_movies_grey"
+                        app:layout_collapseMode="parallax" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/scrim" />
+                </FrameLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:titleTextColor="@color/white" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context=".ui.movie.MovieActivity"
+            tools:showIn="@layout/activity_movie">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivCalendar"
+                    android:layout_width="@dimen/margin_16dp"
+                    android:layout_height="@dimen/margin_16dp"
+                    android:layout_marginStart="@dimen/margin_16dp"
+                    android:layout_marginTop="@dimen/margin_18dp"
+                    android:src="@drawable/ic_calendar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/mainGrey" />
+
+                <TextView
+                    android:id="@+id/tvMovieYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxEms="16"
+                    android:maxLines="1"
+                    android:textColor="@color/greyDark"
+                    android:textSize="@dimen/text_size_extra_info"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivCalendar"
+                    app:layout_constraintStart_toEndOf="@+id/ivCalendar"
+                    app:layout_constraintTop_toTopOf="@+id/ivCalendar" />
+
+                <ImageView
+                    android:id="@+id/ivStar"
+                    android:layout_width="@dimen/margin_16dp"
+                    android:layout_height="@dimen/margin_16dp"
+                    android:layout_marginStart="@dimen/margin_8dp"
+                    android:src="@drawable/ic_star"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvMovieYear"
+                    app:layout_constraintStart_toEndOf="@+id/tvMovieYear"
+                    app:layout_constraintTop_toTopOf="@+id/tvMovieYear"
+                    app:tint="@color/mainGrey" />
+
+                <TextView
+                    android:id="@+id/tvMovieRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_4dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxEms="6"
+                    android:maxLines="1"
+                    android:textColor="@color/greyDark"
+                    android:textSize="@dimen/text_size_extra_info"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivStar"
+                    app:layout_constraintStart_toEndOf="@+id/ivStar"
+                    app:layout_constraintTop_toTopOf="@+id/ivStar" />
+
+                <ImageView
+                    android:id="@+id/ivHourglass"
+                    android:layout_width="@dimen/margin_14dp"
+                    android:layout_height="@dimen/margin_14dp"
+                    android:layout_marginStart="@dimen/margin_8dp"
+                    android:src="@drawable/ic_hourglass"
+                    app:layout_constraintBottom_toBottomOf="@+id/tvMovieRating"
+                    app:layout_constraintStart_toEndOf="@+id/tvMovieRating"
+                    app:layout_constraintTop_toTopOf="@+id/tvMovieRating"
+                    app:tint="@color/mainGrey" />
+
+                <TextView
+                    android:id="@+id/tvRuntime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxEms="6"
+                    android:maxLines="1"
+                    android:textColor="@color/greyDark"
+                    android:textSize="@dimen/text_size_extra_info"
+                    app:layout_constraintBottom_toBottomOf="@+id/ivHourglass"
+                    app:layout_constraintStart_toEndOf="@+id/ivHourglass"
+                    app:layout_constraintTop_toTopOf="@+id/ivHourglass" />
+
+                <TextView
+                    android:id="@+id/tvTagline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:layout_marginEnd="@dimen/text_margin"
+                    android:layout_marginTop="@dimen/margin_8dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_movie_title"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvMovieYear" />
+
+                <TextView
+                    android:id="@+id/tvGenres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:layout_marginEnd="@dimen/text_margin"
+                    android:layout_marginTop="@dimen/margin_8dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_movie_details"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTagline" />
+
+                <TextView
+                    android:id="@+id/tvOverview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/text_margin"
+                    android:layout_marginEnd="@dimen/text_margin"
+                    android:layout_marginTop="@dimen/margin_8dp"
+                    android:textColor="@color/greyDark"
+                    android:textSize="@dimen/text_size_movie_details"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGenres" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dimen_72dp"
+            android:tint="@color/colorPrimary"
+            app:backgroundTint="@color/white"
+            app:fabSize="mini"
+            app:layout_anchor="@id/app_bar"
+            app:layout_anchorGravity="bottom|end"
+            app:srcCompat="@drawable/ic_favorite_border" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabWatched"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16dp"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:tint="@color/colorPrimary"
+            app:backgroundTint="@color/white"
+            app:fabSize="mini"
+            app:layout_anchor="@id/app_bar"
+            app:layout_anchorGravity="bottom|end"
+            app:srcCompat="@drawable/ic_outline_watch_later" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
